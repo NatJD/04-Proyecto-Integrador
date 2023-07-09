@@ -1,13 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 const SerieCard = ({ id, name, genres, url }) => {
   return (
     <div className='col-md-3 my-3 d-flex align-items-stretch'>
       <div className='card'>
-        <a href={`/serie/${id}`}>
+        <Link to={`/serie/${id}`}>
           <div className='image-container'>
             <img className='serie-image' src={url} alt={name} />
           </div>
-        </a>
+        </Link>
         <div className='card-body d-flex flex-column justify-content-between'>
           <div>
             <h5 className='card-title'>{name}</h5>

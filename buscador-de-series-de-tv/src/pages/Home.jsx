@@ -16,9 +16,9 @@ const Home = () => {
 
   useEffect(() => {
     fetch(`https://api.tvmaze.com/search/shows?q=${searchTerm}`)
-      .then((response) => {
-        return response.json()
-      }).then((series) => {
+      .then((response) =>
+        response.json()
+      ).then((series) => {
         console.log(series)
         setData(series)
       }).catch((error) => {
