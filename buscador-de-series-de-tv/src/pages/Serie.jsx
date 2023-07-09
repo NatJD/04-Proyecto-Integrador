@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Seasons from '../components/Seasons'
+import Cast from '../components/Cast'
 
 const Serie = () => {
   const [seri, setSeri] = useState({})
@@ -26,12 +27,16 @@ const Serie = () => {
   return (
     <div>
       <h1>Título: {seri.name}</h1>
+      {seri.image && <img src={seri.image.medium} alt={seri.name} />}
       <p>
         Descripción: {seri.summary ? removeTags(seri.summary) : 'No hay descripción disponible'}
       </p>
 
       <h2>Temporadas:</h2>
       <Seasons serieId={serieId} />
+
+      <h2>Reparto:</h2>
+      <Cast serieId={serieId} />
     </div>
   )
 }
