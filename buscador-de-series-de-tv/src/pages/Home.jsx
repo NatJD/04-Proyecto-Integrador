@@ -1,12 +1,21 @@
 import { useState, useEffect } from 'react'
 import SerieCard from '../components/SerieCard'
+import Search from '../components/Search'
 
 const Home = () => {
-  const myRequest = new Request('https://api.tvmaze.com/shows')
   const [data, setData] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value)
+  }
+
+  const filteredData = data.filter((item) => {
+    return item.show.name.toLowerCase().includes(searchTerm.toLowerCase())
+  })
 
   useEffect(() => {
-    fetch(myRequest)
+    fetch(`https://api.tvmaze.com/search/shows?q=${searchTerm}`)
       .then((response) => {
         return response.json()
       }).then((series) => {
@@ -15,21 +24,22 @@ const Home = () => {
       }).catch((error) => {
         console.error(error)
       })
-  }, [])
+  }, [searchTerm])
 
   return (
     <div className='container'>
+      <Search handleSearchChange={handleSearch} />
       <div className='row'>
         {
-            data.map((item) => (
-              <SerieCard
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                genres={item.genres.join(', ')}
-                url={item.image?.medium}
-              />
-            ))
+          filteredData.map((item) => (
+            <SerieCard
+              key={item.show.id}
+              id={item.show.id}
+              name={item.show.name}
+              genres={item.show.genres.join(', ')}
+              url={item.show.image?.medium}
+            />
+          ))
         }
       </div>
     </div>
