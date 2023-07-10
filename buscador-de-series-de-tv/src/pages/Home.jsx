@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import SerieCard from '../components/SerieCard'
 import Search from '../components/Search'
+import '../App.css'
 
 const Home = () => {
   const [data, setData] = useState([])

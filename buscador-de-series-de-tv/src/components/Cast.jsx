@@ -17,18 +17,16 @@ const Cast = () => {
   }, [serieId])
 
   return (
-    <div>
-      <ul>
-        {cast.map((actor) => (
-          <li key={actor.person.id}>
-            <img src={actor.person.image?.medium} alt={actor.person.name} />
-            <div>
-              <p>{actor.person.name}</p>
-              <p>{actor.character.name}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
+    <div className='container'>
+      {cast.map((actor) => (
+        <div key={actor.person.id} className='box'>
+          <img src={actor.person.image?.medium} alt={actor.person.name} />
+          <div>
+            <p>{actor.person.name}</p>
+            <p>{actor.character.name}</p>
+          </div>
+        </div>
+      ))}
     </div>
   )
 }

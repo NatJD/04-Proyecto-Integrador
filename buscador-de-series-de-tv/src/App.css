@@ -1,3 +1,12 @@
+html,body{
+  background: linear-gradient(
+    90deg,
+    rgba(94, 85, 133, 1) 12%,
+    rgba(94, 85, 133, 1) 84%
+  );
+  background-blend-mode: normal;
+}
+
 /** ProductCard Begin **/
 .image-container {
   position: relative;
@@ -9,40 +18,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.availability-tag {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 4px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #5cb85c;
-  border-radius: 4px;
-  z-index: 1;
-}
-
-.out-of-stock {
-  background-color: #d9534f;
-}
-
-.whatsapp-button {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #128C7E;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.whatsapp-button svg {
-  margin-right: 4px;
 }
 
 .card-title {
@@ -59,26 +34,76 @@
 
 /** ProductCard End **/
 
-
-/** SearchBar Begin **/
 .search-bar {
-  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  margin-top: 15em;
+
 }
 
 .search-bar input {
-  width: 100%;
+  
   padding: 12px;
   font-size: 18px;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
-
 /** SearchBar End **/
 
-/** Header Begin **/
 
-.header-container {
-  background-color: #fee893;
+/**PARRAFO*/
+p {
+  color: #eddada;
+  text-align: center;
 }
 
-/** Header End **/
+/**TITULO*/
+.title-h1 {
+  color: #d4aeda;
+  text-shadow: 2px 2px 2px rgba(62, 9, 89, 0.83);
+  text-align: center;
+}
+
+.title-h2 {
+  color: rgb(248, 226, 203);
+  text-shadow: 2px 2px 2px rgba(189, 123, 53, 0.6);
+  text-align: center;
+}
+
+/**LISTA*/
+li {
+  color: rgb(244, 209, 154);
+  text-align: center;
+  list-style-type: none;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/**Cast**/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center;
+}
+
+.box {
+  margin: 10px;
+}
+
+/**tempodadas**/
+.season {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.expanded {
+  color: rgb(229, 169, 129);
+}
+
+.episodes-list {
+  display: none;
+}
+
+.expanded + .episodes-list {
+  display: block;
+}

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 const Episodes = ({ seasonId }) => {
   const [episodes, setEpisodes] = useState([])
+  const [isExpanded, setIsExpanded] = useState(false)
 
   useEffect(() => {
     fetch(`https://api.tvmaze.com/seasons/${seasonId}/episodes`)
@@ -14,12 +15,25 @@ const Episodes = ({ seasonId }) => {
       })
   }, [seasonId])
 
+  const toggleEpisodes = () => {
+    setIsExpanded(!isExpanded)
+  }
+
   return (
-    <ul>
-      {episodes.map((episode) => (
-        <li key={episode.id}>{episode.number}: {episode.name}</li>
-      ))}
-    </ul>
+    <div>
+      <div className={`season ${isExpanded ? 'expanded' : ''}`} onClick={toggleEpisodes}>
+        Ver capitulos
+      </div>
+      {isExpanded && (
+        <ul className='episodes-list'>
+          {episodes.map((episode) => (
+            <li key={episode.id}>
+              {episode.number}: {episode.name}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   )
 }
 
