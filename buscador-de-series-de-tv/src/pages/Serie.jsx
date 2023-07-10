@@ -27,15 +27,26 @@ const Serie = () => {
   return (
     <div>
       <h1 className='title-h1'>{seri.name}</h1>
-      {seri.image && <img src={seri.image.medium} alt={seri.name} />}
-      <p>
-        Descripción: {seri.summary ? removeTags(seri.summary) : 'No hay descripción disponible'}
-      </p>
-      <h2 className='title-h2'>Temporadas:</h2>
-      <Seasons serieId={serieId} />
+      <div className='serie-info clearfix'>
+        <img className='serie-pelicula-image' src={seri.image?.medium} alt={seri.name} />
+        <div className='serie-description'>
+          <p className='text-description'>
+            {seri.summary ? removeTags(seri.summary) : 'No hay descripción disponible'}
+          </p>
+          <p className='serie-status'>Status:{seri.status}</p>
+          <p className='serie-language'>Language:{seri.language}</p>
+        </div>
+      </div>
 
-      <h2 className='title-h2'>Reparto:</h2>
-      <Cast serieId={serieId} />
+      <div className='seasons-container'>
+        <h2 className='title-h2'>SEASONS:</h2>
+        <Seasons serieId={serieId} />
+      </div>
+
+      <div className='cast-container'>
+        <h2 className='title-h2'>CAST:</h2>
+        <Cast serieId={serieId} />
+      </div>
     </div>
   )
 }

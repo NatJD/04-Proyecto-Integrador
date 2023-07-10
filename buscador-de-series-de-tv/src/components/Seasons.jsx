@@ -19,7 +19,7 @@ const Seasons = ({ serieId }) => {
     <ul>
       {seasons.map((season) => (
         <li key={season.id}>
-          Temporada {season.number}: {season.name}
+          Season {season.number}: {season.name}
           <Episodes seasonId={season.id} />
         </li>
       ))}

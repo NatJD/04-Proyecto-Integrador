@@ -20,8 +20,12 @@ const Cast = () => {
     <div className='container'>
       {cast.map((actor) => (
         <div key={actor.person.id} className='box'>
-          <img src={actor.person.image?.medium} alt={actor.person.name} />
-          <div>
+          <img
+            className='cast-image'
+            src={actor.person.image?.medium}
+            alt={actor.person.name}
+          />
+          <div className='description-cast'>
             <p>{actor.person.name}</p>
             <p>{actor.character.name}</p>
           </div>

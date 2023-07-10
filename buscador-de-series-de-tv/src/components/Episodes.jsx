@@ -22,7 +22,7 @@ const Episodes = ({ seasonId }) => {
   return (
     <div>
       <div className={`season ${isExpanded ? 'expanded' : ''}`} onClick={toggleEpisodes}>
-        Ver capitulos
+        Chapters
       </div>
       {isExpanded && (
         <ul className='episodes-list'>

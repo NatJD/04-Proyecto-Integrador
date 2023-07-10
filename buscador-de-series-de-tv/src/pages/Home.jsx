@@ -29,6 +29,7 @@ const Home = () => {
 
   return (
     <div className='container'>
+      <h1 className='titulo-inicio'>BUSCA TU SERIE O PELICULA FAVORITA</h1>
       <Search handleSearchChange={handleSearch} />
       <div className='row'>
         {

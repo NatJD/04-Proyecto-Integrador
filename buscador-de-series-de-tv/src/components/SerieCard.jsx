@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const SerieCard = ({ id, name, genres, url }) => {
   return (
-    <div className='col-md-3 my-3 d-flex align-items-stretch'>
+    <div className='col-md-3 my-3 d-flex flex-fill aling-items'>
       <div className='card'>
         <Link to={`/serie/${id}`}>
           <div className='image-container'>
