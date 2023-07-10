@@ -1,8 +1,8 @@
 html,body{
   background: linear-gradient(
     90deg,
-    rgba(94, 85, 133, 1) 12%,
-    rgba(94, 85, 133, 1) 84%
+    rgb(64, 56, 102) 12%,
+    rgba(64, 56, 102) 84%
   );
   background-blend-mode: normal;
 }
@@ -59,7 +59,7 @@ p {
 
 /**TITULO*/
 .title-h1 {
-  color: #d4aeda;
+  color: #d3bad7;
   text-shadow: 2px 2px 2px rgba(62, 9, 89, 0.83);
   text-align: center;
 }

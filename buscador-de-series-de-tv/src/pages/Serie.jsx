@@ -26,12 +26,11 @@ const Serie = () => {
 
   return (
     <div>
-      <h1 className='title-h1'>{seri.name}</h1>
-      {seri.image && <img src={seri.image.medium} alt={seri.name} />}
-      <p>
-        Descripción: {seri.summary ? removeTags(seri.summary) : 'No hay descripción disponible'}
-      </p>
-
+      <h1 className='title-h1'>{seri.name}</h1> 
+        {seri.image && <img src={seri.image.medium} alt={seri.name} />}
+        <p>
+          Descripción: {seri.summary ? removeTags(seri.summary) : 'No hay descripción disponible'}
+        </p>
       <h2 className='title-h2'>Temporadas:</h2>
       <Seasons serieId={serieId} />
 
